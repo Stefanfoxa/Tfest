@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- PLACEHOLDER: ganti dengan logo asli -->
+  <circle cx="60" cy="60" r="56" fill="#012e23" stroke="#f19a20" stroke-width="4"/>
+  <path d="M60 24 L88 92 H74 L68 76 H52 L46 92 H32 Z M56 64 H64 L60 52 Z" fill="#f19a20" fill-rule="evenodd"/>
+</svg>

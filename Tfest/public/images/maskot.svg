@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" width="520" height="520">
+  <!-- PLACEHOLDER: ganti dengan gambar maskot asli -->
+  <rect width="520" height="520" rx="28" fill="#012e23"/>
+  <circle cx="260" cy="260" r="170" fill="none" stroke="#f19a20" stroke-width="6"/>
+  <path d="M170 330 C170 220 250 170 340 190 C300 210 310 250 270 270 C250 280 250 310 290 330 C240 350 190 350 170 330 Z" fill="#f19a20"/>
+  <circle cx="318" cy="208" r="8" fill="#012e23"/>
+</svg>

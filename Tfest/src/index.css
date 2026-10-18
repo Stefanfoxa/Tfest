@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The Season: file lokal. Jika file belum ada, browser memakai fallback (Cormorant Garamond, lalu Georgia). */
+@font-face {
+  font-family: 'The Season';
+  src: url('/fonts/TheSeason.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-forest font-sans text-cream antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Judul memakai weight normal (jangan di-bold, nanti terlihat palsu). */
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-normal;
+  }
+}
+
+@layer components {
+  /* Kartu gelap: hijau tua 85% + blur 20px + border emas 30% (efek kaca). */
+  .glass {
+    @apply border border-gold/30 bg-forest/85 backdrop-blur-[20px];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
