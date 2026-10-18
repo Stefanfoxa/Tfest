@@ -1,28 +1,30 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { ASSETS } from '../lib/assets'
 import { EVENT } from '../data/siteContent'
 
-const LINKS = [
-  { to: '/', label: 'Beranda', end: true },
-  { to: '/competition', label: 'Competition', end: false },
+type LinkId = 'home' | 'timeline' | 'competition'
+
+const LINKS: { id: LinkId; label: string; to: string }[] = [
+  { id: 'home', label: 'Beranda', to: '/' },
+  { id: 'timeline', label: 'Timeline', to: '/#timeline' },
+  { id: 'competition', label: 'Competition', to: '/competition' },
 ]
 
-const pill =
-  'inline-flex min-h-[44px] items-center justify-center rounded-full px-6 text-sm font-semibold tracking-wide transition duration-200 hover:-translate-y-1'
-
-function linkClass({ isActive }: { isActive: boolean }) {
-  return `${pill} ${
-    isActive
-      ? 'bg-gold text-forest shadow-gold'
-      : 'border border-cream bg-forest/40 text-cream hover:bg-forest/70'
-  }`
+function isActive(id: LinkId, pathname: string, hash: string): boolean {
+  if (id === 'competition') return pathname.startsWith('/competition')
+  if (pathname !== '/') return false
+  return id === 'timeline' ? hash === '#timeline' : hash !== '#timeline'
 }
+
+const pill =
+  'inline-flex min-h-[44px] items-center justify-center rounded-full px-6 text-sm font-medium tracking-wide transition duration-200 hover:-translate-y-0.5'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
+  const { pathname, hash } = useLocation()
 
   // Klik di luar menu atau tombol Esc menutup menu mobile.
   useEffect(() => {
@@ -40,6 +42,26 @@ export default function Navbar() {
       document.removeEventListener('keydown', onKey)
     }
   }, [open])
+
+  const renderLinks = (onClick?: () => void) =>
+    LINKS.map((l) => {
+      const active = isActive(l.id, pathname, hash)
+      return (
+        <Link
+          key={l.id}
+          to={l.to}
+          aria-current={active ? 'page' : undefined}
+          onClick={onClick}
+          className={`${pill} ${
+            active
+              ? 'bg-gold font-semibold text-forest shadow-gold-btn'
+              : 'border border-cream/70 bg-forest/40 text-cream hover:bg-cream hover:text-forest'
+          }`}
+        >
+          {l.label}
+        </Link>
+      )
+    })
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/20 bg-forest/85 backdrop-blur-[20px]">
@@ -69,23 +91,15 @@ export default function Navbar() {
             <nav
               id="mobile-menu"
               aria-label="Menu utama"
-              className="glass absolute left-0 top-full mt-3 flex w-56 flex-col gap-2 rounded-3xl p-3 md:hidden"
+              className="glass absolute left-0 top-full mt-3 flex w-60 flex-col gap-2 rounded-3xl p-3 md:hidden"
             >
-              {LINKS.map((l) => (
-                <NavLink key={l.to} to={l.to} end={l.end} className={linkClass} onClick={() => setOpen(false)}>
-                  {l.label}
-                </NavLink>
-              ))}
+              {renderLinks(() => setOpen(false))}
             </nav>
           )}
         </div>
 
         <nav aria-label="Menu utama" className="ml-auto hidden items-center gap-3 md:flex">
-          {LINKS.map((l) => (
-            <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
-              {l.label}
-            </NavLink>
-          ))}
+          {renderLinks()}
         </nav>
       </div>
     </header>
