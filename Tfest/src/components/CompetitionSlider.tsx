@@ -46,7 +46,7 @@ const arrowBtn =
 
 // Tombol tautan. Jika URL di data/competitions.ts masih kosong, tombol tampil redup dan tidak bisa diklik.
 function ActionLink({ href, className, children }: { href: string; className: string; children: React.ReactNode }) {
-  const base = 'inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full px-9 text-base font-semibold transition duration-200'
+  const base = 'inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full px-9 sm:w-auto text-base font-semibold transition duration-200'
   if (!href) {
     return (
       <span role="link" aria-disabled="true" title="Tautan segera tersedia" className={`${base} cursor-not-allowed opacity-50 ${className}`}>
@@ -104,7 +104,7 @@ export default function CompetitionSlider() {
         touchX.current = null
       }}
     >
-      <div className="glass rounded-[32px] px-6 pb-8 pt-10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] md:px-24 md:pb-12 md:pt-14">
+      <div className="glass rounded-[32px] px-5 pb-8 pt-10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] md:px-24 md:pb-12 md:pt-14">
         {/* key={slug}: konten dipasang ulang tiap pindah slide sehingga animasi masuk berjalan. */}
         <div key={c.slug} className="animate-slide-in flex flex-col items-center text-center" aria-live="polite">
           <span className={`rounded-full border px-6 py-2 text-sm font-semibold uppercase tracking-[0.25em] ${ACCENT[c.color]}`}>
@@ -122,16 +122,16 @@ export default function CompetitionSlider() {
           <p className="mt-9 text-xs font-semibold uppercase tracking-[0.25em] text-cream md:text-sm">{label}</p>
 
           {target ? (
-            <div className="mt-4 flex items-center gap-2 md:gap-4">
+            <div className="mt-4 flex w-full max-w-xl items-center justify-center gap-1.5 sm:gap-3 md:max-w-none md:gap-4">
               {units.map(([name, value], k) => (
-                <div key={name} className="flex items-center gap-2 md:gap-4">
-                  <div className="min-w-[66px] rounded-2xl border border-cream/15 bg-cream/5 px-2 py-3 md:min-w-[100px] md:py-4">
-                    <div className={`text-[11px] font-semibold uppercase tracking-widest md:text-xs ${ACCENT[c.color].split(' ')[0]}`}>
+                <div key={name} className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-3 md:flex-none md:gap-4">
+                  <div className="min-w-0 flex-1 rounded-2xl border border-cream/15 bg-cream/5 px-1 py-3 md:w-[100px] md:flex-none md:py-4">
+                    <div className={`text-[10px] font-semibold uppercase tracking-wider sm:text-[11px] md:text-xs ${ACCENT[c.color].split(' ')[0]}`}>
                       {name}
                     </div>
-                    <div className="mt-1 text-3xl tabular-nums text-cream md:text-5xl">{String(value).padStart(2, '0')}</div>
+                    <div className="mt-1 text-[28px] tabular-nums leading-none text-cream sm:text-4xl md:text-5xl">{String(value).padStart(2, '0')}</div>
                   </div>
-                  {k < 3 && <span className="text-2xl text-gold md:text-3xl">:</span>}
+                  {k < 3 && <span className="hidden text-2xl text-gold sm:block md:text-3xl">:</span>}
                 </div>
               ))}
             </div>
@@ -141,7 +141,7 @@ export default function CompetitionSlider() {
             </div>
           )}
 
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row">
             <ActionLink
               href={c.guidebookUrl}
               className="border border-cream/50 text-cream hover:bg-cream hover:text-forest"
