@@ -24,9 +24,9 @@ export default function Hero() {
         </h1>
 
         <p className="mt-8 text-[clamp(22px,3vw,38px)] leading-snug text-gold">
-          {EVENT.tagline[0]}
-          <span className="mx-3 text-cream/50">&bull;</span>
-          <span className="inline-block">{EVENT.tagline[1]}</span>
+          <span className="block sm:inline">{EVENT.tagline[0]}</span>
+          <span className="mx-3 hidden text-cream/50 sm:inline">&bull;</span>
+          <span className="block sm:inline">{EVENT.tagline[1]}</span>
         </p>
       </div>
 
