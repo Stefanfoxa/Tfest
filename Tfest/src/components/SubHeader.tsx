@@ -16,7 +16,7 @@ export default function SubHeader({ title }: SubHeaderProps) {
       />
       <div className="absolute inset-0 -z-10 bg-forest/85" />
       <div className="px-4 py-12 text-center md:py-16">
-        <h1 className="break-words pl-[0.2em] text-2xl uppercase tracking-[0.2em] text-cream sm:text-3xl md:pl-[0.3em] md:text-5xl md:tracking-[0.3em]">
+        <h1 className="break-words pl-[0.2em] text-2xl leading-tight uppercase tracking-[0.2em] text-cream sm:text-3xl md:pl-[0.3em] md:text-5xl md:tracking-[0.3em]">
           {title}
         </h1>
         <span aria-hidden="true" className="mx-auto mt-4 block h-0.5 w-24 bg-gold" />
