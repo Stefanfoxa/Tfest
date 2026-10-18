@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { COMPETITIONS, type ColorKey, type Competition } from '../data/competitions'
 import { COLOR_STYLES } from '../lib/colorStyles'
@@ -44,6 +43,23 @@ function useNow() {
 
 const arrowBtn =
   'grid h-12 w-12 shrink-0 place-items-center rounded-full border border-cream/25 bg-cream/10 text-cream transition duration-200 hover:scale-110 hover:bg-gold hover:text-forest'
+
+// Tombol tautan. Jika URL di data/competitions.ts masih kosong, tombol tampil redup dan tidak bisa diklik.
+function ActionLink({ href, className, children }: { href: string; className: string; children: React.ReactNode }) {
+  const base = 'inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full px-9 text-base font-semibold transition duration-200'
+  if (!href) {
+    return (
+      <span role="link" aria-disabled="true" title="Tautan segera tersedia" className={`${base} cursor-not-allowed opacity-50 ${className}`}>
+        {children}
+      </span>
+    )
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`${base} hover:-translate-y-1 hover:scale-105 ${className}`}>
+      {children}
+    </a>
+  )
+}
 
 export default function CompetitionSlider() {
   const [i, setI] = useState(0)
@@ -95,7 +111,7 @@ export default function CompetitionSlider() {
             {c.code}
           </span>
 
-          <h2 className="mt-6 max-w-3xl text-[clamp(30px,4.6vw,56px)] leading-[1.2] text-cream">
+          <h2 className="mt-6 max-w-3xl text-[clamp(34px,5vw,64px)] leading-[1.2] text-cream">
             {c.name} <span className={ACCENT[c.color].split(' ')[0]}>({c.code})</span>
           </h2>
 
@@ -126,20 +142,15 @@ export default function CompetitionSlider() {
           )}
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/#timeline"
-              className={`inline-flex min-h-[54px] items-center justify-center rounded-full border px-9 text-base font-semibold transition duration-200 hover:-translate-y-1 hover:scale-105 ${COLOR_STYLES[c.color].pillActive}`}
+            <ActionLink
+              href={c.guidebookUrl}
+              className="border border-cream/50 text-cream hover:bg-cream hover:text-forest"
             >
-              Lihat Jadwal {c.code} &rarr;
-            </Link>
-            <a
-              href={`https://wa.me/${c.whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-[54px] items-center justify-center rounded-full border border-cream/50 px-9 text-base font-medium text-cream transition duration-200 hover:-translate-y-1 hover:bg-cream hover:text-forest"
-            >
-              Hubungi {c.pic}
-            </a>
+              Handbook
+            </ActionLink>
+            <ActionLink href={c.registerUrl} className={`border ${COLOR_STYLES[c.color].pillActive}`}>
+              Link Pendaftaran &rarr;
+            </ActionLink>
           </div>
         </div>
 
