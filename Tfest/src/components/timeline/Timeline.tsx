@@ -80,7 +80,7 @@ export default function Timeline() {
           <div className="glass mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center md:px-14 md:py-16">
             <Ornament />
             <h2 className="text-4xl leading-tight text-cream md:text-6xl">
-              Explore Timeline of {EVENT.nameMain} <span className="text-gold">{EVENT.year}</span>.
+              <span className="text-[1.16em]">Explore Timeline of {EVENT.nameMain}</span> <span className="text-gold">{EVENT.year}</span>.
             </h2>
             <div className="mt-10">
               <button
@@ -146,7 +146,7 @@ export default function Timeline() {
           <div className="glass mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center md:px-14 md:py-16">
             <Ornament />
             <h2 className="text-4xl leading-tight text-cream md:text-6xl">
-              {titleParts.main} <span className="text-gold">{titleParts.last}</span>
+              <span className="text-[1.16em]">{titleParts.main}</span> <span className="text-gold">{titleParts.last}</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/90 md:text-lg">
               {EVENT.closingThanks}
