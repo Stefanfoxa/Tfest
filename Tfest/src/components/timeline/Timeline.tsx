@@ -77,7 +77,7 @@ export default function Timeline() {
       <div className="mx-auto max-w-6xl">
         {/* 1. Intro */}
         {!started && !showClosing && (
-          <div className="glass mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center md:px-14 md:py-16">
+          <div className="glass mx-auto max-w-5xl rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
             <Ornament />
             <h2 className="text-4xl leading-tight text-cream md:text-6xl">
               <span className="text-[1.16em]">Explore Timeline of {EVENT.nameMain}</span> <span className="text-gold">{EVENT.year}</span>.
@@ -143,7 +143,7 @@ export default function Timeline() {
 
         {/* 3. Penutup */}
         {showClosing && (
-          <div className="glass mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center md:px-14 md:py-16">
+          <div className="glass mx-auto max-w-5xl rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
             <Ornament />
             <h2 className="text-4xl leading-tight text-cream md:text-6xl">
               <span className="text-[1.16em]">{titleParts.main}</span> <span className="text-gold">{titleParts.last}</span>
