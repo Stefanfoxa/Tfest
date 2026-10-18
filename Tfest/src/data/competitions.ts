@@ -3,12 +3,21 @@
 
 export type ColorKey = 'aec' | 'aice' | 'arc' | 'avoc' | 'lcca'
 
+/** Jenis acara (badge) pada Timeline, mengikuti daftar jenis di PRD Bagian 9. */
+export type EventType = 'Registrasi' | 'Pengumpulan' | 'Pengumuman' | 'TM' | 'Final' | 'Awarding'
+
 export interface TimelineItem {
+  /** Nama kegiatan persis seperti di brief. */
   label: string
   /** Tanggal mulai, format ISO (YYYY-MM-DD). */
   start: string
   /** Tanggal akhir bila berupa rentang. */
   end?: string
+  type: EventType
+  /** Judul singkat untuk label di kalender. */
+  short: string
+  /** Deskripsi tambahan untuk modal. Kosong sampai teksnya tersedia. */
+  description: string
 }
 
 export interface Competition {
@@ -49,14 +58,14 @@ export const COMPETITIONS: Competition[] = [
     fee: 'Gratis',
     benefits: ['Juara 1, 2, 3: Uang Pembinaan + Certificate', 'E-Certificate untuk seluruh peserta'],
     timeline: [
-      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-02' },
-      { label: 'Batas Pengumpulan Karya', start: '2026-11-04' },
-      { label: 'Pengumuman 6 Finalis', start: '2026-11-18' },
-      { label: 'Batas Pengumpulan Media Presentasi', start: '2026-11-23' },
-      { label: 'Technical Meeting Final', start: '2026-11-23' },
-      { label: 'Babak Final', start: '2026-11-24' },
-      { label: 'Pengumuman Pemenang', start: '2026-11-25' },
-      { label: 'Awarding dan Closing Ceremony', start: '2026-11-25' },
+      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-02', type: 'Registrasi', short: 'Daftar', description: '' },
+      { label: 'Batas Pengumpulan Karya', start: '2026-11-04', type: 'Pengumpulan', short: 'Batas Karya', description: '' },
+      { label: 'Pengumuman 6 Finalis', start: '2026-11-18', type: 'Pengumuman', short: '6 Finalis', description: '' },
+      { label: 'Batas Pengumpulan Media Presentasi', start: '2026-11-23', type: 'Pengumpulan', short: 'Batas Media', description: '' },
+      { label: 'Technical Meeting Final', start: '2026-11-23', type: 'TM', short: 'TM Final', description: '' },
+      { label: 'Babak Final', start: '2026-11-24', type: 'Final', short: 'Final', description: '' },
+      { label: 'Pengumuman Pemenang', start: '2026-11-25', type: 'Pengumuman', short: 'Pemenang', description: '' },
+      { label: 'Awarding dan Closing Ceremony', start: '2026-11-25', type: 'Awarding', short: 'Awarding', description: '' },
     ],
     pic: 'Caca',
     whatsapp: '6281276879501',
@@ -79,10 +88,10 @@ export const COMPETITIONS: Competition[] = [
       'Juara 3: Uang Pembinaan + Sertifikat',
     ],
     timeline: [
-      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-15' },
-      { label: 'Pengumpulan Karya', start: '2026-10-19', end: '2026-11-18' },
-      { label: 'Pengumuman', start: '2026-11-25' },
-      { label: 'Awarding & Closing Ceremony', start: '2026-11-25' },
+      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-15', type: 'Registrasi', short: 'Daftar', description: '' },
+      { label: 'Pengumpulan Karya', start: '2026-10-19', end: '2026-11-18', type: 'Pengumpulan', short: 'Karya', description: '' },
+      { label: 'Pengumuman', start: '2026-11-25', type: 'Pengumuman', short: 'Pengumuman', description: '' },
+      { label: 'Awarding & Closing Ceremony', start: '2026-11-25', type: 'Awarding', short: 'Awarding', description: '' },
     ],
     pic: 'Putri',
     whatsapp: '6281262612959',
@@ -92,8 +101,6 @@ export const COMPETITIONS: Competition[] = [
   {
     slug: 'pfpbc',
     code: 'PFPBC',
-    // Di PDF brief tertulis "PlantationFund Essay Competition" (kemungkinan salah salin).
-    // Nama ini memakai nama file (PFPBC) dan daftar Anda ("Policy Brief"). Mohon konfirmasi.
     name: 'PlantationFund Policy Brief Competition',
     color: 'avoc',
     theme: 'Kontribusi Dana Perkebunan dalam Mendorong Ketahanan Fiskal di Indonesia',
@@ -112,14 +119,14 @@ export const COMPETITIONS: Competition[] = [
       'E-Certificate untuk seluruh peserta',
     ],
     timeline: [
-      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-02' },
-      { label: 'Batas Pengumpulan Abstrak', start: '2026-11-02' },
-      { label: 'Pengumuman Semifinalis', start: '2026-11-08' },
-      { label: 'Batas Akhir Pengumpulan Full Paper', start: '2026-11-18' },
-      { label: 'Pengumuman Finalis', start: '2026-11-22' },
-      { label: 'Technical Meeting Finalis', start: '2026-11-22' },
-      { label: 'Batas Akhir Pengumpulan Bahan Paparan', start: '2026-11-24' },
-      { label: 'Babak Final dan Awarding', start: '2026-11-25' },
+      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-02', type: 'Registrasi', short: 'Daftar', description: '' },
+      { label: 'Batas Pengumpulan Abstrak', start: '2026-11-02', type: 'Pengumpulan', short: 'Abstrak', description: '' },
+      { label: 'Pengumuman Semifinalis', start: '2026-11-08', type: 'Pengumuman', short: 'Semifinalis', description: '' },
+      { label: 'Batas Akhir Pengumpulan Full Paper', start: '2026-11-18', type: 'Pengumpulan', short: 'Full Paper', description: '' },
+      { label: 'Pengumuman Finalis', start: '2026-11-22', type: 'Pengumuman', short: 'Finalis', description: '' },
+      { label: 'Technical Meeting Finalis', start: '2026-11-22', type: 'TM', short: 'TM Finalis', description: '' },
+      { label: 'Batas Akhir Pengumpulan Bahan Paparan', start: '2026-11-24', type: 'Pengumpulan', short: 'Paparan', description: '' },
+      { label: 'Babak Final dan Awarding', start: '2026-11-25', type: 'Final', short: 'Final', description: '' },
     ],
     pic: 'Fahmi',
     whatsapp: '6281276789501',
@@ -129,7 +136,6 @@ export const COMPETITIONS: Competition[] = [
   {
     slug: 'pfic',
     code: 'PFIC',
-    // Di PDF tertulis "PlantanationFund" (typo); di sini memakai ejaan "PlantationFund" seperti lomba lain.
     name: 'PlantationFund Infographic Competition',
     color: 'aice',
     theme: 'Optimalisasi Dana Perkebunan untuk Mendorong Produktivitas Berkelanjutan dan Pelestarian Lingkungan',
@@ -143,10 +149,10 @@ export const COMPETITIONS: Competition[] = [
       'Juara 3: Uang Pembinaan + Sertifikat',
     ],
     timeline: [
-      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-15' },
-      { label: 'Pengumpulan Karya', start: '2026-10-19', end: '2026-11-18' },
-      { label: 'Pengumuman', start: '2026-11-25' },
-      { label: 'Awarding & Closing Ceremony', start: '2026-11-25' },
+      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-15', type: 'Registrasi', short: 'Daftar', description: '' },
+      { label: 'Pengumpulan Karya', start: '2026-10-19', end: '2026-11-18', type: 'Pengumpulan', short: 'Karya', description: '' },
+      { label: 'Pengumuman', start: '2026-11-25', type: 'Pengumuman', short: 'Pengumuman', description: '' },
+      { label: 'Awarding & Closing Ceremony', start: '2026-11-25', type: 'Awarding', short: 'Awarding', description: '' },
     ],
     pic: 'Sarah',
     whatsapp: '6282172793087',
