@@ -1,71 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* The Season: file lokal. Jika file belum ada, browser memakai fallback (Cormorant Garamond, lalu Georgia). */
-@font-face {
-  font-family: 'The Season';
-  src: url('/fonts/TheSeason.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@layer base {
-  html {
-    /* Semua ukuran rem naik 12,5%: teks seluruh situs jadi lebih besar dan nyaman dibaca. */
-    font-size: 112.5%;
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  body {
-    @apply bg-forest font-sans text-cream antialiased;
-    overflow-x: hidden;
-  }
-
-  /* Judul memakai weight normal (jangan di-bold, nanti terlihat palsu). */
-  h1,
-  h2,
-  h3 {
-    @apply font-display font-normal;
-  }
-}
-
-@layer components {
-  /* Kartu gelap: hijau tua 85% + blur 20px + border emas 30% (efek kaca). */
-  .glass {
-    @apply border border-gold/30 bg-forest/85 backdrop-blur-[20px];
-  }
-}
-
-/* Motif daun sawit berulang untuk latar Hero. */
-.bg-batik {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23f19a20' stroke-opacity='.18' stroke-width='1.2'%3E%3Cpath d='M60 8c14 14 14 34 0 52-14-18-14-38 0-52zM60 60c14 14 14 34 0 52-14-18-14-38 0-52z'/%3E%3Cpath d='M0 60c14-14 34-14 52 0-18 14-38 14-52 0zM68 60c14-14 34-14 52 0-18 14-38 14-52 0z'/%3E%3Cpath d='M60 8v104M8 60h104' stroke-opacity='.07'/%3E%3C/g%3E%3Ccircle cx='60' cy='60' r='3' fill='%23f19a20' fill-opacity='.4'/%3E%3C/svg%3E");
-  background-size: 120px 120px;
-}
-
-@keyframes slide-in {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-18px); }
-}
-.animate-slide-in { animation: slide-in 0.5s ease-out both; }
-.animate-floaty { animation: floaty 9s ease-in-out infinite; }
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#012e23" />
+    <title>Treasury Festival 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Angka: hanya karakter 0-9, supaya file font sangat kecil -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&text=0123456789&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
