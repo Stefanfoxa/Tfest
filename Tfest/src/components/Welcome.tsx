@@ -14,7 +14,7 @@ export default function Welcome() {
           className="mx-auto h-auto w-full max-w-sm md:max-w-md"
         />
         <div>
-          <h2 className="text-3xl leading-tight text-forest md:text-5xl">Welcome to {EVENT.fullName}</h2>
+          <h2 className="text-4xl leading-tight text-forest md:text-6xl">Welcome to {EVENT.fullName}</h2>
           <span aria-hidden="true" className="my-5 block h-1 w-16 rounded-full bg-gold" />
           {/* Paragraf deskripsi kosong sampai teksnya diberikan (lihat data/siteContent.ts). */}
           {EVENT.welcomeText && (
