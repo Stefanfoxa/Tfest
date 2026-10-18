@@ -26,10 +26,10 @@ export default {
       fontFamily: {
         // Libre Baskerville hanya memuat 0-9, ditaruh paling depan agar semua angka memakainya.
         display: ['"Libre Baskerville"', '"The Season"', '"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['"Libre Baskerville"', '"League Spartan"', 'system-ui', 'sans-serif'],
+        sans: ['"Libre Baskerville"', 'Poppins', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        gold: '0 8px 24px -6px rgba(241, 154, 32, 0.55)',
+        'gold-btn': '0 8px 24px -6px rgba(241, 154, 32, 0.55)',
         'glow-aec': '0 0 28px -6px #f19a20',
         'glow-aice': '0 0 28px -6px #5fb89a',
         'glow-arc': '0 0 28px -6px #c8985f',
