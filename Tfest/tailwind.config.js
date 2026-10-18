@@ -26,6 +26,8 @@ export default {
       fontFamily: {
         // Libre Baskerville hanya memuat 0-9, ditaruh paling depan agar semua angka memakainya.
         display: ['"Libre Baskerville"', '"The Season"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        // League Spartan: judul bagian di antara divider.
+        spartan: ['"League Spartan"', 'system-ui', 'sans-serif'],
         sans: ['"Libre Baskerville"', 'Poppins', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
