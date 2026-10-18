@@ -42,7 +42,7 @@ export default function Timeline() {
   const ranges = useMemo(() => (active ? buildRanges(active) : []), [active])
 
   if (!active || months.length === 0) {
-    return <section id="timeline" aria-label="Timeline" className="scroll-mt-16 bg-forest" />
+    return <section id="timeline-content" aria-label="Timeline" className="scroll-mt-16 bg-forest" />
   }
 
   const { year, month } = months[monthIdx]
@@ -70,7 +70,7 @@ export default function Timeline() {
 
   return (
     <section
-      id="timeline"
+      id="timeline-content"
       aria-label="Timeline"
       className="relative scroll-mt-16 bg-forest px-4 pb-20 pt-4 md:pb-28"
     >
@@ -79,7 +79,7 @@ export default function Timeline() {
         {!started && !showClosing && (
           <div className="glass mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center md:px-14 md:py-16">
             <Ornament />
-            <h2 className="text-3xl leading-tight text-cream md:text-5xl">
+            <h2 className="text-4xl leading-tight text-cream md:text-6xl">
               Explore Timeline of {EVENT.nameMain} <span className="text-gold">{EVENT.year}</span>.
             </h2>
             <div className="mt-10">
@@ -145,7 +145,7 @@ export default function Timeline() {
         {showClosing && (
           <div className="glass mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center md:px-14 md:py-16">
             <Ornament />
-            <h2 className="text-3xl leading-tight text-cream md:text-5xl">
+            <h2 className="text-4xl leading-tight text-cream md:text-6xl">
               {titleParts.main} <span className="text-gold">{titleParts.last}</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/90 md:text-lg">
