@@ -8,8 +8,8 @@ type LinkId = 'home' | 'timeline' | 'competition'
 
 const LINKS: { id: LinkId; label: string; to: string }[] = [
   { id: 'home', label: 'Beranda', to: '/' },
-  { id: 'timeline', label: 'Timeline', to: '/#timeline' },
   { id: 'competition', label: 'Competition', to: '/competition' },
+  { id: 'timeline', label: 'Timeline', to: '/#timeline' },
 ]
 
 function isActive(id: LinkId, pathname: string, hash: string): boolean {
