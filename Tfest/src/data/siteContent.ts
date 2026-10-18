@@ -12,3 +12,11 @@ export const EVENT = {
   closingTitle: 'See u on the next Treasury Festival 2027',
   closingThanks: 'Terima kasih banyak atas partisipasi luar biasa Anda dalam Treasury Festival 2026!',
 } as const
+
+// Kontak umum acara untuk Footer. Kosongkan email ('') untuk menyembunyikan tombolnya.
+export const SOCIAL = {
+  instagram: 'https://instagram.com/tfest_pknstan',
+  instagramHandle: '@tfest_pknstan',
+  /** ISI alamat email panitia di sini, contoh: 'halo@contoh.com'. */
+  email: 'Tr3@suryfest',
+} as const
