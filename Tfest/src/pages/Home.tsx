@@ -1,6 +1,7 @@
 import Hero from '../components/Hero'
 import Welcome from '../components/Welcome'
 import Divider from '../components/Divider'
+import Timeline from '../components/timeline/Timeline'
 
 export default function Home() {
   return (
@@ -8,8 +9,7 @@ export default function Home() {
       <Hero />
       <Welcome />
       <Divider />
-      {/* Placeholder Timeline: dibuat di tahap berikutnya. */}
-      <section id="timeline" aria-label="Timeline" className="bg-forest" />
+      <Timeline />
     </>
   )
 }
