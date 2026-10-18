@@ -24,11 +24,13 @@
     overflow-x: hidden;
   }
 
-  /* Judul memakai weight normal (jangan di-bold, nanti terlihat palsu). */
-  h1,
+  /* Judul utama (h1) normal; semua subjudul (h2, h3) bold. */
+  h1 {
+    @apply font-display font-normal;
+  }
   h2,
   h3 {
-    @apply font-display font-normal;
+    @apply font-display font-bold;
   }
 }
 
