@@ -1,9 +1,13 @@
 import { ASSETS } from '../lib/assets'
 import { CONTACTS, formatPhone } from '../data/contacts'
-import { EVENT } from '../data/siteContent'
+import { Instagram, Mail } from 'lucide-react'
+import { EVENT, SOCIAL } from '../data/siteContent'
+import Divider from './Divider'
 
 export default function Footer() {
   return (
+    <>
+    <Divider />
     <footer className="relative isolate overflow-hidden px-4 py-16 md:py-20">
       <img
         src={ASSETS.footerBg}
@@ -24,7 +28,7 @@ export default function Footer() {
           className="h-[110px] w-[110px] md:h-[150px] md:w-[150px]"
         />
         <h2 className="mt-4 text-4xl leading-tight text-cream md:text-6xl">
-          {EVENT.nameMain} <span className="text-gold">{EVENT.year}</span>
+          <span className="text-[1.16em]">{EVENT.nameMain}</span> <span className="text-gold">{EVENT.year}</span>
         </h2>
         <p className="mt-3 text-base leading-relaxed text-gold md:text-lg">{EVENT.tagline.join(', ')}</p>
 
@@ -51,7 +55,32 @@ export default function Footer() {
             </li>
           ))}
         </ul>
+
+        {/* Media sosial & email panitia. */}
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <a
+            href={SOCIAL.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-gold/60 px-6 text-base text-cream transition duration-200 hover:-translate-y-1 hover:bg-gold hover:text-forest hover:shadow-gold-btn"
+          >
+            <Instagram size={20} /> {SOCIAL.instagramHandle}
+          </a>
+          {SOCIAL.email && (
+            <a
+              href={`mailto:${SOCIAL.email}`}
+              className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-gold/60 px-6 text-base text-cream transition duration-200 hover:-translate-y-1 hover:bg-gold hover:text-forest hover:shadow-gold-btn"
+            >
+              <Mail size={20} /> {SOCIAL.email}
+            </a>
+          )}
+        </div>
+
+        <p className="mt-14 w-full border-t border-gold/20 pt-6 text-sm text-cream/70 md:text-base">
+          &copy; {EVENT.year} {EVENT.nameMain} &mdash; Politeknik Keuangan Negara STAN. All rights reserved.
+        </p>
       </div>
     </footer>
+    </>
   )
 }
