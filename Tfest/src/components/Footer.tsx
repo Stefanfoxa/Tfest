@@ -23,12 +23,12 @@ export default function Footer() {
           loading="lazy"
           className="h-[110px] w-[110px] md:h-[150px] md:w-[150px]"
         />
-        <h2 className="mt-4 text-3xl text-cream md:text-5xl">
+        <h2 className="mt-4 text-3xl leading-tight text-cream md:text-5xl">
           {EVENT.nameMain} <span className="text-gold">{EVENT.year}</span>
         </h2>
-        <p className="mt-2 text-base text-gold md:text-lg">{EVENT.tagline.join(', ')}</p>
+        <p className="mt-3 text-base leading-relaxed text-gold md:text-lg">{EVENT.tagline.join(', ')}</p>
 
-        <h3 className="mt-12 text-2xl text-cream md:text-4xl">Contact Us!</h3>
+        <h3 className="mt-14 text-2xl leading-tight text-cream md:text-4xl">Contact Us!</h3>
 
         {/* Flex-wrap + justify-center: 4 kartu sebaris di layar lebar, 2 kolom di tablet, 1 kolom di HP. */}
         <ul className="mt-8 flex w-full flex-wrap justify-center gap-4">
