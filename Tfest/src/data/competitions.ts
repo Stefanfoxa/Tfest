@@ -71,7 +71,7 @@ export const COMPETITIONS: Competition[] = [
     whatsapp: '6281276879501',
     // Link asli dari Anda berakhiran /formResponse (alamat kirim jawaban), diganti /viewform (halaman formulir).
     registerUrl:
-      'staner.id/FormulirPendaftaranPFEC2026',
+      'https://staner.id/FormulirPendaftaranPFEC2026',
     guidebookUrl: '',
   },
   {
@@ -97,7 +97,7 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Putri',
     whatsapp: '6281262612959',
-    registerUrl: 'staner.id/FormulirPendaftaranPFC32026',
+    registerUrl: 'https://staner.id/FormulirPendaftaranPFC32026',
     guidebookUrl: '',
   },
   {
@@ -132,7 +132,7 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Fahmi',
     whatsapp: '6281276789501',
-    registerUrl: 'staner.id/FormulirPendaftaranPFPBC2026',
+    registerUrl: 'https://staner.id/FormulirPendaftaranPFPBC2026',
     guidebookUrl: '',
   },
   {
@@ -158,7 +158,7 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Sarah',
     whatsapp: '6282172793087',
-    registerUrl: 'staner.id/FormulirPendaftaranPFIC2026',
+    registerUrl: 'https://staner.id/FormulirPendaftaranPFIC2026',
     guidebookUrl: '',
   },
 ]
