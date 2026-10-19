@@ -1,7 +1,7 @@
 // Pemisah bagian: garis ganda emas memudar, belah ketupat berlapis di tengah, dan titik-titik hiasan.
 export default function Divider() {
   return (
-    <div role="separator" className="bg-forest px-4 py-12 md:py-16">
+    <div role="separator" className="px-4 py-12 md:py-16">
       <div className="mx-auto flex max-w-4xl items-center gap-3 md:gap-5">
         <div className="flex flex-1 flex-col gap-[3px]">
           <span className="h-px bg-gradient-to-r from-transparent to-gold" />
