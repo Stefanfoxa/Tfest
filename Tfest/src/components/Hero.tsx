@@ -1,19 +1,10 @@
 import { Link } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
-import { ASSETS } from '../lib/assets'
 import { EVENT } from '../data/siteContent'
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-24 pt-28 text-center">
-      {/* Lapisan latar: foto (jika ada), motif daun, cahaya emas, lalu memudar ke hijau tua. */}
-      <img src={ASSETS.heroBg} alt="" aria-hidden="true" className="absolute inset-0 -z-30 h-full w-full object-cover opacity-30" />
-      <div className="absolute inset-0 -z-20 bg-batik" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(241,154,32,0.22),transparent_60%)]" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-forest" />
-      <div aria-hidden="true" className="animate-floaty absolute -left-24 top-40 -z-10 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
-      <div aria-hidden="true" className="animate-floaty absolute -right-24 bottom-32 -z-10 h-80 w-80 rounded-full bg-aice-lite/10 blur-3xl" />
-
+    <section className="relative flex min-h-[100svh] items-center justify-center px-4 pb-24 pt-28 text-center">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-gold md:text-base">Politeknik Keuangan Negara STAN</p>
 
