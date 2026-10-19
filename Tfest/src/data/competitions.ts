@@ -72,7 +72,7 @@ export const COMPETITIONS: Competition[] = [
     // Link asli dari Anda berakhiran /formResponse (alamat kirim jawaban), diganti /viewform (halaman formulir).
     registerUrl:
       'https://staner.id/FormulirPendaftaranPFEC2026',
-    guidebookUrl: '',
+    guidebookUrl: 'https://staner.id/HandbookPFEC2026',
   },
   {
     slug: 'pfc3',
@@ -98,7 +98,7 @@ export const COMPETITIONS: Competition[] = [
     pic: 'Putri',
     whatsapp: '6281262612959',
     registerUrl: 'https://staner.id/FormulirPendaftaranPFC32026',
-    guidebookUrl: '',
+    guidebookUrl: 'https://staner.id/HandbookPFC32026',
   },
   {
     slug: 'pfpbc',
@@ -133,7 +133,7 @@ export const COMPETITIONS: Competition[] = [
     pic: 'Fahmi',
     whatsapp: '6281276789501',
     registerUrl: 'https://staner.id/FormulirPendaftaranPFPBC2026',
-    guidebookUrl: '',
+    guidebookUrl: 'https://staner.id/HandbookPFPBC2026',
   },
   {
     slug: 'pfic',
@@ -159,6 +159,6 @@ export const COMPETITIONS: Competition[] = [
     pic: 'Sarah',
     whatsapp: '6282172793087',
     registerUrl: 'https://staner.id/FormulirPendaftaranPFIC2026',
-    guidebookUrl: '',
+    guidebookUrl: 'https://staner.id/HandbookPFIC2026',
   },
 ]
