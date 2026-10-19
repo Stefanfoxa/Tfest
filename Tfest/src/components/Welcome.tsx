@@ -3,7 +3,7 @@ import { EVENT } from '../data/siteContent'
 
 export default function Welcome() {
   return (
-    <section id="welcome" className="bg-forest px-4 py-16 md:py-24">
+    <section id="welcome" className="px-4 py-16 md:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-8 rounded-[28px] border border-soil/15 bg-cream p-6 md:grid-cols-2 md:gap-12 md:p-12">
         <img
           src={ASSETS.maskot}
