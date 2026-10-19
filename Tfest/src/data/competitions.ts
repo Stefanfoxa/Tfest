@@ -69,7 +69,9 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Caca',
     whatsapp: '6281276879501',
-    registerUrl: '',
+    // Link asli dari Anda berakhiran /formResponse (alamat kirim jawaban), diganti /viewform (halaman formulir).
+    registerUrl:
+      'https://docs.google.com/forms/d/e/1FAIpQLSd68eJrW9Thg7HHTy1A1rupkc9W95FVnGZFcQvHXGDHdmOzdA/viewform',
     guidebookUrl: '',
   },
   {
@@ -130,7 +132,7 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Fahmi',
     whatsapp: '6281276789501',
-    registerUrl: '',
+    registerUrl: 'https://forms.gle/k5jfy1BpHQns9wv57',
     guidebookUrl: '',
   },
   {
@@ -156,7 +158,7 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Sarah',
     whatsapp: '6282172793087',
-    registerUrl: '',
+    registerUrl: 'https://forms.gle/CRPdsuctjk1EzLEA6',
     guidebookUrl: '',
   },
 ]
