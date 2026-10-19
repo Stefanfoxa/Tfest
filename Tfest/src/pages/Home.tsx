@@ -12,8 +12,7 @@ export default function Home() {
       <Welcome />
       <Divider />
 
-      <section aria-label="Lomba" className="relative isolate bg-forest px-4 pb-16 md:pb-24">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-batik opacity-60" />
+      <section aria-label="Lomba" className="px-4 pb-16 md:pb-24">
         <SectionTitle id="lomba" title="Competition" subtitle="Pilih lomba yang paling sesuai denganmu." />
         <CompetitionSlider />
       </section>
