@@ -42,7 +42,7 @@ export default function Timeline() {
   const ranges = useMemo(() => (active ? buildRanges(active) : []), [active])
 
   if (!active || months.length === 0) {
-    return <section id="timeline-content" aria-label="Timeline" className="scroll-mt-16 bg-forest" />
+    return <section id="timeline-content" aria-label="Timeline" className="scroll-mt-16" />
   }
 
   const { year, month } = months[monthIdx]
@@ -72,7 +72,7 @@ export default function Timeline() {
     <section
       id="timeline-content"
       aria-label="Timeline"
-      className="relative scroll-mt-16 bg-forest px-4 pb-20 pt-4 md:pb-28"
+      className="relative scroll-mt-16 px-4 pb-20 pt-4 md:pb-28"
     >
       <div className="mx-auto max-w-6xl">
         {/* 1. Intro */}
