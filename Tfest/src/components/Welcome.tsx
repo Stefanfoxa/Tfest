@@ -1,10 +1,14 @@
 import { ASSETS } from '../lib/assets'
 import { EVENT } from '../data/siteContent'
+import { DecorLayer } from './Decor'
+import { DECOR } from '../decorConfig'
 
 export default function Welcome() {
   return (
-    <section id="welcome" className="px-4 py-16 md:py-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 rounded-[28px] border border-soil/15 bg-cream p-6 md:grid-cols-2 md:gap-12 md:p-12">
+    <section id="welcome" className="relative overflow-hidden px-4 py-16 md:py-24">
+      <div className="relative mx-auto max-w-6xl">
+      <DecorLayer items={DECOR.welcome} />
+      <div className="relative z-10 grid items-center gap-8 rounded-[28px] border border-soil/15 bg-cream p-6 md:grid-cols-2 md:gap-12 md:p-12">
         <img
           src={ASSETS.maskot}
           alt={`Maskot ${EVENT.fullName}`}
@@ -22,6 +26,7 @@ export default function Welcome() {
             <p className="text-base leading-relaxed text-forest md:text-lg">{EVENT.welcomeText}</p>
           )}
         </div>
+      </div>
       </div>
     </section>
   )
