@@ -3,6 +3,8 @@ import { CONTACTS, formatPhone } from '../data/contacts'
 import { Instagram, Mail } from 'lucide-react'
 import { EVENT, SOCIAL } from '../data/siteContent'
 import Divider from './Divider'
+import { DecorLayer } from './Decor'
+import { DECOR } from '../decorConfig'
 
 // Ikon TikTok (lucide tidak menyediakannya).
 function TikTokIcon({ size = 20 }: { size?: number }) {
@@ -27,7 +29,8 @@ export default function Footer() {
       />
       <div className="absolute inset-0 -z-10 bg-forest/90" />
 
-      <div className="mx-auto flex max-w-6xl flex-col items-center text-center">
+      <DecorLayer items={DECOR.footer} />
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
         <img
           src={ASSETS.logo}
           alt={`Logo ${EVENT.fullName}`}
