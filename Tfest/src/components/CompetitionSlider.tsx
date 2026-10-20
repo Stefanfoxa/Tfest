@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react'
 import { COMPETITIONS, type ColorKey, type Competition } from '../data/competitions'
 import { COLOR_STYLES } from '../lib/colorStyles'
 
@@ -141,12 +141,19 @@ export default function CompetitionSlider() {
             </div>
           )}
 
-          <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row">
+          <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
             <ActionLink
               href={c.guidebookUrl}
               className="border border-cream/50 text-cream hover:bg-cream hover:text-forest"
             >
               Handbook
+            </ActionLink>
+            <ActionLink
+              href={c.twibbonUrl}
+              className="border border-gold text-gold hover:bg-gold hover:text-forest"
+            >
+              <ImageIcon size={20} aria-hidden="true" />
+              Twibbon
             </ActionLink>
             <ActionLink href={c.registerUrl} className={`border ${COLOR_STYLES[c.color].pillActive}`}>
               Link Pendaftaran &rarr;
