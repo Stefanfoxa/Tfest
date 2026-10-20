@@ -24,20 +24,26 @@ export interface DecorItem {
   origin?: string
   /** Titik tengah gambar ditaruh di (left, top). */
   center?: boolean
+  /** Hanya pusatkan secara vertikal (top menjadi titik tengah gambar). */
+  centerY?: boolean
   z?: number
   delay?: number
 }
 
 // Memudar sebelum mencapai sisi yang terpotong lurus (kanan & atas), jadi tepinya tidak terlihat.
-const HAZE_MASK = 'radial-gradient(ellipse 62% 62% at 38% 62%, #000 15%, transparent 100%)'
-const TREE = 'clamp(160px, 26vw, 420px)'
+// Pohon "muncul dari kabut": bagian bawah memudar halus, jadi tidak ada potongan lurus di batas section.
+const FADE_BOTTOM = 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.55) 14%, #000 34%)'
 
 export const DECOR = {
   hero: [
+    // Cahaya matahari dari sudut kiri atas.
     { src: 'glow-sunbeam-topleft', top: '-2vw', left: '-2vw', width: 'clamp(220px, 34vw, 520px)', opacity: 0.7, blend: 'screen' },
-    { src: 'leaf-gold-pale-corner', top: '0', right: '0', width: 'clamp(110px, 22vw, 340px)', opacity: 0.9, animate: 'sway', origin: 'top right' },
-    { src: 'palm-oil-large-fruit', bottom: '0', right: '-3vw', width: TREE, animate: 'sway-m' },
-    { src: 'palm-date-small-fruit', bottom: '0', left: '-2vw', width: 'clamp(110px, 16vw, 260px)', animate: 'sway-m' },
+    // Satu helai daun emas utuh menjuntai dari tepi kanan (tidak terpotong di tengah).
+    { src: 'leaf-gold-gradient', top: '11vh', right: '1.5vw', width: 'clamp(70px, 9vw, 150px)', rotate: 20, opacity: 0.92, animate: 'sway', origin: 'bottom center' },
+    // Dua pohon sawit menempel di tepi kiri-kanan bawah; pohon besar di kanan, kecil di kiri (kesan kedalaman).
+    { src: 'palm-oil-large-fruit', bottom: '-2vh', right: '1vw', width: 'clamp(120px, 20vw, 340px)', mask: FADE_BOTTOM, animate: 'sway-m' },
+    { src: 'palm-date-small-fruit', bottom: '-2vh', left: '1.5vw', width: 'clamp(96px, 12vw, 210px)', opacity: 0.85, mask: FADE_BOTTOM, animate: 'sway-m' },
+    // Kilau bintang kecil di sekitar judul.
     { src: 'glow-star-white', top: '24%', left: '14%', width: 'clamp(40px, 5vw, 80px)', blend: 'screen', from: 'md', animate: 'twinkle' },
     { src: 'glow-star-white', top: '40%', right: '13%', width: 'clamp(32px, 4vw, 64px)', blend: 'screen', from: 'md', animate: 'twinkle', delay: 1.6 },
   ] as DecorItem[],
@@ -45,25 +51,18 @@ export const DECOR = {
   heroYear: [
     { src: 'glow-starburst-center', top: '50%', left: '50%', width: 'clamp(240px, 32vw, 520px)', opacity: 0.45, blend: 'screen', center: true, from: 'md', animate: 'twinkle', z: -1 },
   ] as DecorItem[],
-  welcome: [
-    { src: 'leaf-gold-gradient', top: '-34px', left: '-18px', width: 'clamp(80px, 12vw, 190px)', rotate: -18, animate: 'sway' },
-    { src: 'leaf-olive-gold', bottom: '-44px', right: '-22px', width: 'clamp(90px, 13vw, 200px)', rotate: 14, flip: true, from: 'md', animate: 'sway' },
-  ] as DecorItem[],
-  timelineCard: [
-    { src: 'glow-haze-peach', top: '-70px', right: '-70px', width: 'clamp(160px, 24vw, 340px)', opacity: 0.8, blend: 'screen', mask: HAZE_MASK },
-    { src: 'leaf-gold-glitter', bottom: '-90px', left: '-100px', width: 'clamp(100px, 15vw, 240px)', rotate: 8, flip: true, from: 'md', animate: 'sway' },
-  ] as DecorItem[],
-  // Layar kalender/agenda: hanya di margin luar, layar lebar (>= 1280 px), opacity <= 0.5.
-  timelineMargin: [
-    { src: 'leaf-gold-gradient', top: '8%', left: '-34px', width: '110px', rotate: -12, opacity: 0.45, from: 'xl' },
-    { src: 'leaf-gold-gradient', top: '8%', right: '-34px', width: '110px', rotate: 12, flip: true, opacity: 0.45, from: 'xl' },
-  ] as DecorItem[],
+  // Sengaja kosong: kartu krem/kaca sudah kuat secara visual dan dekorasi di belakangnya terlihat terpotong.
+  // Isi daftar ini jika nanti ingin menambah dekorasi.
+  welcome: [] as DecorItem[],
+  timelineCard: [] as DecorItem[],
+  timelineMargin: [] as DecorItem[],
+  // Dua daun simetris di ujung banner; dipusatkan vertikal dan lebih kecil dari tinggi banner agar tidak terpotong.
   subheader: [
-    { src: 'leaf-gold-gradient', top: '50%', left: '-1vw', width: 'clamp(56px, 9vw, 150px)', rotate: -15, z: 0 },
-    { src: 'leaf-gold-gradient', top: '50%', right: '-1vw', width: 'clamp(56px, 9vw, 150px)', rotate: 15, flip: true, z: 0 },
+    { src: 'leaf-gold-gradient', top: 'calc(50% + 32px)', left: '2vw', width: 'clamp(44px, 6vw, 96px)', rotate: -28, centerY: true },
+    { src: 'leaf-gold-gradient', top: 'calc(50% + 32px)', right: '2vw', width: 'clamp(44px, 6vw, 96px)', rotate: 28, flip: true, centerY: true },
   ] as DecorItem[],
   footer: [
     { src: 'glow-lensflare-soft', top: '0', right: '0', width: 'clamp(180px, 28vw, 420px)', opacity: 0.35, blend: 'screen' },
-    { src: 'palm-date-small-fruit', bottom: '0', left: '0', width: 'clamp(90px, 11vw, 180px)', opacity: 0.35, from: 'md' },
+    { src: 'palm-date-small-fruit', bottom: '0', left: '2vw', width: 'clamp(90px, 11vw, 180px)', opacity: 0.35, from: 'md', mask: FADE_BOTTOM },
   ] as DecorItem[],
 }
