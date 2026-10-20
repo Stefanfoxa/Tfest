@@ -38,6 +38,8 @@ export interface Competition {
   whatsapp: string
   registerUrl: string
   guidebookUrl: string
+  /** Link twibbon. Kosong sampai linknya tersedia. */
+  twibbonUrl: string
 }
 
 export const COMPETITIONS: Competition[] = [
@@ -71,17 +73,18 @@ export const COMPETITIONS: Competition[] = [
     whatsapp: '6281276879501',
     // Link asli dari Anda berakhiran /formResponse (alamat kirim jawaban), diganti /viewform (halaman formulir).
     registerUrl:
-      'https://staner.id/FormulirPendaftaranPFEC2026',
-    guidebookUrl: 'https://staner.id/HandbookPFEC2026',
+      'https://docs.google.com/forms/d/e/1FAIpQLSd68eJrW9Thg7HHTy1A1rupkc9W95FVnGZFcQvHXGDHdmOzdA/viewform',
+    guidebookUrl: '',
+    twibbonUrl: '',
   },
   {
     slug: 'pfc3',
     code: 'PFC3',
     name: 'Plantation Fund Creative Content Challenge',
     color: 'arc',
-    theme: 'Dari Penyaluran ke Dampak: Menghidupkan Nilai Dana Perkebunan untuk Fiskal Tangguh',
-    subthemes: [],
-    participants: 'Umum.',
+    theme: 'Kontribusi Dana Perkebunan dalam Mendorong Ketahanan Fiskal di Indonesia',
+    subthemes: ['Dari Penyaluran ke Dampak: Menghidupkan Nilai Dana Perkebunan untuk Fiskal Tangguh'],
+    participants: 'Mahasiswa aktif di seluruh Perguruan Tinggi Negeri/Swasta/Kedinasan se-Indonesia dan masyarakat umum.',
     nature: 'Individual atau Tim',
     fee: 'Gratis',
     benefits: [
@@ -97,13 +100,14 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Putri',
     whatsapp: '6281262612959',
-    registerUrl: 'https://staner.id/FormulirPendaftaranPFC32026',
-    guidebookUrl: 'https://staner.id/HandbookPFC32026',
+    registerUrl: '',
+    guidebookUrl: '',
+    twibbonUrl: '',
   },
   {
     slug: 'pfpbc',
     code: 'PFPBC',
-    name: 'PlantationFund Policy Brief Competition',
+    name: 'Plantation Fund Policy Brief Competition',
     color: 'avoc',
     theme: 'Kontribusi Dana Perkebunan dalam Mendorong Ketahanan Fiskal di Indonesia',
     subthemes: [
@@ -132,8 +136,9 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Fahmi',
     whatsapp: '6281276789501',
-    registerUrl: 'https://staner.id/FormulirPendaftaranPFPBC2026',
-    guidebookUrl: 'https://staner.id/HandbookPFPBC2026',
+    registerUrl: 'https://forms.gle/k5jfy1BpHQns9wv57',
+    guidebookUrl: '',
+    twibbonUrl: '',
   },
   {
     slug: 'pfic',
@@ -141,7 +146,12 @@ export const COMPETITIONS: Competition[] = [
     name: 'PlantationFund Infographic Competition',
     color: 'aice',
     theme: 'Optimalisasi Dana Perkebunan untuk Mendorong Produktivitas Berkelanjutan dan Pelestarian Lingkungan',
-    subthemes: [],
+    subthemes: [
+      'Produktivitas dan Transformasi Ekonomi Perkebunan',
+      'Inklusi Ekonomi dan Peningkatan Kesejahteraan Pekebun',
+      'Inovasi Teknologi dan Digitalisasi untuk Perkebunan Berkelanjutan',
+      'Ekonomi Hijau dan Pelestarian Lingkungan dalam Sektor Perkebunan',
+    ],
     participants: 'Mahasiswa aktif di seluruh Perguruan Tinggi Negeri/Swasta/Kedinasan se-Indonesia.',
     nature: 'Individual',
     fee: 'Gratis',
@@ -158,7 +168,8 @@ export const COMPETITIONS: Competition[] = [
     ],
     pic: 'Sarah',
     whatsapp: '6282172793087',
-    registerUrl: 'https://staner.id/FormulirPendaftaranPFIC2026',
-    guidebookUrl: 'https://staner.id/HandbookPFIC2026',
+    registerUrl: 'https://forms.gle/CRPdsuctjk1EzLEA6',
+    guidebookUrl: '',
+    twibbonUrl: '',
   },
 ]
