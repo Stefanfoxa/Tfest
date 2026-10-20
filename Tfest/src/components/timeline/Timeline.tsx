@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
 import { COMPETITIONS } from '../../data/competitions'
+import { DecorLayer } from '../Decor'
+import { DECOR } from '../../decorConfig'
 import { EVENT } from '../../data/siteContent'
 import { COLOR_STYLES } from '../../lib/colorStyles'
 import { MONTH_NAMES, formatShort, toISO } from '../../lib/calendar'
@@ -72,12 +74,15 @@ export default function Timeline() {
     <section
       id="timeline-content"
       aria-label="Timeline"
-      className="relative scroll-mt-16 px-4 pb-20 pt-4 md:pb-28"
+      className="relative scroll-mt-16 overflow-hidden px-4 pb-20 pt-4 md:pb-28"
     >
-      <div className="mx-auto max-w-6xl">
+      {started && !showClosing && <DecorLayer items={DECOR.timelineMargin} />}
+      <div className="relative z-10 mx-auto max-w-6xl">
         {/* 1. Intro */}
         {!started && !showClosing && (
-          <div className="glass mx-auto max-w-5xl rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
+          <div className="relative mx-auto max-w-5xl">
+            <DecorLayer items={DECOR.timelineCard} />
+            <div className="glass relative z-10 rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
             <Ornament />
             <h2 className="text-4xl leading-tight text-cream md:text-6xl">
               <span className="text-[1.16em]">Explore Timeline of {EVENT.nameMain}</span> <span className="text-gold">{EVENT.year}</span>
@@ -94,6 +99,7 @@ export default function Timeline() {
                 Click Here →
               </button>
             </div>
+          </div>
           </div>
         )}
 
@@ -143,7 +149,9 @@ export default function Timeline() {
 
         {/* 3. Penutup */}
         {showClosing && (
-          <div className="glass mx-auto max-w-5xl rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
+          <div className="relative mx-auto max-w-5xl">
+            <DecorLayer items={DECOR.timelineCard} />
+            <div className="glass relative z-10 rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
             <Ornament />
             <h2 className="text-4xl leading-tight text-cream md:text-6xl">
               <span className="text-[1.16em]">{titleParts.main}</span> <span className="text-gold">{titleParts.last}</span>
@@ -156,6 +164,7 @@ export default function Timeline() {
                 Kembali →
               </button>
             </div>
+          </div>
           </div>
         )}
       </div>
