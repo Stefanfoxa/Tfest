@@ -71,3 +71,23 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Dekorasi (Decor.tsx): sway & kedip halus. Di HP hanya elemen ber-kelas decor-sway-m yang bergerak. */
+@keyframes decor-sway {
+  0%, 100% { transform: rotate(calc(var(--rot) - 2deg)) scaleX(var(--flip)); }
+  50% { transform: rotate(calc(var(--rot) + 2deg)) scaleX(var(--flip)); }
+}
+@keyframes decor-twinkle {
+  0%, 100% { opacity: calc(var(--op) * 0.25); }
+  50% { opacity: var(--op); }
+}
+@media (max-width: 767px) {
+  .decor-sway-m { animation: decor-sway 9s ease-in-out infinite; will-change: transform; }
+}
+@media (min-width: 768px) {
+  .decor-sway { animation: decor-sway 8s ease-in-out infinite; will-change: transform; }
+  .decor-twinkle { animation: decor-twinkle 4s ease-in-out infinite; will-change: opacity; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .decor-sway, .decor-sway-m, .decor-twinkle { animation: none !important; }
+}
