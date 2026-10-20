@@ -11,9 +11,10 @@ export default function Divider() {
         <span className="h-1.5 w-1.5 rounded-full bg-gold/60" />
         <span className="h-2.5 w-2.5 rotate-45 border border-gold" />
 
-        <span className="relative block h-7 w-7 rotate-45 border border-gold md:h-8 md:w-8">
-          <span className="absolute inset-[5px] bg-gold" />
-          <span className="absolute inset-[10px] bg-forest" />
+        {/* Sepasang daun emas kecil (satu dicerminkan) menggantikan belah ketupat tengah. */}
+        <span aria-hidden="true" className="flex items-center">
+          <img src="/images/decor/webp/leaf-gold-gradient.webp" alt="" draggable={false} loading="lazy" decoding="async" className="pointer-events-none h-11 w-auto select-none md:h-14" style={{ transform: 'rotate(-38deg)' }} />
+          <img src="/images/decor/webp/leaf-gold-gradient.webp" alt="" draggable={false} loading="lazy" decoding="async" className="pointer-events-none -ml-2 h-11 w-auto select-none md:h-14" style={{ transform: 'scaleX(-1) rotate(-38deg)' }} />
         </span>
 
         <span className="h-2.5 w-2.5 rotate-45 border border-gold" />
