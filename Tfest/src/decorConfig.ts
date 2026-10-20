@@ -38,11 +38,6 @@ export const DECOR = {
   hero: [
     // Cahaya matahari dari sudut kiri atas.
     { src: 'glow-sunbeam-topleft', top: '-2vw', left: '-2vw', width: 'clamp(220px, 34vw, 520px)', opacity: 0.7, blend: 'screen' },
-    // Satu helai daun emas utuh menjuntai dari tepi kanan (tidak terpotong di tengah).
-    { src: 'leaf-gold-gradient', top: '11vh', right: '1.5vw', width: 'clamp(70px, 9vw, 150px)', rotate: 20, opacity: 0.92, animate: 'sway', origin: 'bottom center' },
-    // Dua pohon sawit menempel di tepi kiri-kanan bawah; pohon besar di kanan, kecil di kiri (kesan kedalaman).
-    { src: 'palm-oil-large-fruit', bottom: '-2vh', right: '1vw', width: 'clamp(120px, 20vw, 340px)', mask: FADE_BOTTOM, animate: 'sway-m' },
-    { src: 'palm-date-small-fruit', bottom: '-2vh', left: '1.5vw', width: 'clamp(96px, 12vw, 210px)', opacity: 0.85, mask: FADE_BOTTOM, animate: 'sway-m' },
     // Kilau bintang kecil di sekitar judul.
     { src: 'glow-star-white', top: '24%', left: '14%', width: 'clamp(40px, 5vw, 80px)', blend: 'screen', from: 'md', animate: 'twinkle' },
     { src: 'glow-star-white', top: '40%', right: '13%', width: 'clamp(32px, 4vw, 64px)', blend: 'screen', from: 'md', animate: 'twinkle', delay: 1.6 },
