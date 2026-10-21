@@ -53,7 +53,10 @@ export const DECOR = {
     { src: 'leaf-gold-gradient', top: 'calc(50% + 32px)', left: '2vw', width: 'clamp(44px, 6vw, 96px)', rotate: -28, centerY: true },
     { src: 'leaf-gold-gradient', top: 'calc(50% + 32px)', right: '2vw', width: 'clamp(44px, 6vw, 96px)', rotate: 28, flip: true, centerY: true },
   ] as DecorItem[],
+  // Dua pohon emas di sudut seberang: kiri atas dan kanan bawah (batang keluar dari tepi layar).
   footer: [
+    { src: 'palm-gold-tl', top: '-2vw', left: '-3vw', width: 'clamp(112px, 21vw, 330px)' },
+    { src: 'palm-gold-br', bottom: '-3vw', right: '-3vw', width: 'clamp(112px, 21vw, 330px)' },
     { src: 'glow-lensflare-soft', top: '0', right: '0', width: 'clamp(180px, 28vw, 420px)', opacity: 0.35, blend: 'screen' },
   ] as DecorItem[],
 }
