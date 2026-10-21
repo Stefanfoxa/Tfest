@@ -31,9 +31,6 @@ export interface DecorItem {
 }
 
 // Memudar sebelum mencapai sisi yang terpotong lurus (kanan & atas), jadi tepinya tidak terlihat.
-// Pohon "muncul dari kabut": bagian bawah memudar halus, jadi tidak ada potongan lurus di batas section.
-const FADE_BOTTOM = 'linear-gradient(to top, transparent 0%, rgba(0,0,0,0.55) 14%, #000 34%)'
-
 export const DECOR = {
   hero: [
     // Cahaya matahari dari sudut kiri atas.
@@ -58,6 +55,5 @@ export const DECOR = {
   ] as DecorItem[],
   footer: [
     { src: 'glow-lensflare-soft', top: '0', right: '0', width: 'clamp(180px, 28vw, 420px)', opacity: 0.35, blend: 'screen' },
-    { src: 'palm-date-small-fruit', bottom: '0', left: '2vw', width: 'clamp(90px, 11vw, 180px)', opacity: 0.35, from: 'md', mask: FADE_BOTTOM },
   ] as DecorItem[],
 }
