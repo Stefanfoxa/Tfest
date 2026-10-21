@@ -4,7 +4,7 @@ export const EVENT = {
   year: '2026',
   fullName: 'Treasury Festival 2026',
   /** Dua baris subjudul Hero; Footer menggabungkannya dengan koma. */
-  tagline: ['Growing Together' • 'Building Fiscal Resilience'],
+  tagline: ['Growing Together • Building Fiscal Resilience'],
   /** Paragraf deskripsi di bagian Welcome. Hanya memuat fakta dari brief lomba. */
   welcomeText:
     'Treasury Festival 2026 menghadirkan empat lomba bertema Dana Perkebunan, terbuka bagi pelajar SMA dan sederajat, mahasiswa, serta masyarakat umum, tanpa biaya pendaftaran.',
