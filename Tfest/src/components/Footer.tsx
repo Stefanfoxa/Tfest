@@ -31,14 +31,16 @@ export default function Footer() {
 
       <DecorLayer items={DECOR.footer} />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
-        <img
-          src={ASSETS.logo}
-          alt={`Logo ${EVENT.fullName}`}
-          width={150}
-          height={150}
-          loading="lazy"
-          className="h-[110px] w-[110px] md:h-[150px] md:w-[150px]"
-        />
+        <span className="grid h-[110px] w-[110px] place-items-center rounded-full bg-cream ring-4 ring-gold/60 md:h-[150px] md:w-[150px]">
+          <img
+            src={ASSETS.logo}
+            alt={`Logo ${EVENT.fullName}`}
+            width={110}
+            height={110}
+            loading="lazy"
+            className="h-[70%] w-[70%] object-contain"
+          />
+        </span>
         <h2 className="mt-4 text-4xl leading-tight text-cream md:text-6xl">
           <span className="text-[1.16em]">{EVENT.nameMain}</span> <span className="text-gold">{EVENT.year}</span>
         </h2>
