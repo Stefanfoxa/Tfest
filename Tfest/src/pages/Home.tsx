@@ -13,12 +13,12 @@ export default function Home() {
       <Divider />
 
       <section aria-label="Lomba" className="px-4 pb-16 md:pb-24">
-        <SectionTitle id="lomba" title="Competition" subtitle="Pilih lomba yang paling sesuai denganmu" />
+        <SectionTitle id="lomba" title="COMPETITION" subtitle="Pilih lomba yang paling sesuai denganmu" />
         <CompetitionSlider />
       </section>
 
       <Divider />
-      <SectionTitle id="timeline" title="Timeline" subtitle="Pantau jadwal setiap tahap lomba" />
+      <SectionTitle id="timeline" title="TIMELINE" subtitle="Pantau jadwal setiap tahap lomba" />
       <Timeline />
     </>
   )
