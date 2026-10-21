@@ -6,6 +6,6 @@ export const ASSETS = {
   logoFull: '/images/logo-tfest.webp', // logo lengkap dengan tulisan (untuk latar terang)
   heroBg: '/images/bg-hero.svg',
   subheaderBg: '/images/bg-subheader.svg',
-  footerBg: '/images/bg-footer.svg',
+  footerBg: '/images/footer-batik.webp',
   maskot: '/images/maskot.svg',
 } as const
