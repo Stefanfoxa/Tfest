@@ -2,9 +2,22 @@ import { ASSETS } from '../lib/assets'
 import { CONTACTS, formatPhone } from '../data/contacts'
 import { Instagram, Mail } from 'lucide-react'
 import { EVENT, SOCIAL } from '../data/siteContent'
-import Divider from './Divider'
 import { DecorLayer } from './Decor'
 import { DECOR } from '../decorConfig'
+
+// Pita hias pembatas di atas footer (pola daun api emas berulang), garis emas, dan belah ketupat di tengah.
+const BAND_BG =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='56' viewBox='0 0 72 56'%3E%3Cg fill='%23f19a20' fill-opacity='.14' stroke='%23f19a20' stroke-opacity='.6' stroke-width='1.2'%3E%3Cpath d='M36 7c10 10 10 25 0 38-10-13-10-28 0-38z'/%3E%3Cpath d='M36 15v26' stroke-opacity='.35'/%3E%3Cpath d='M0 22l6 6-6 6-6-6zM72 22l6 6-6 6-6-6z'/%3E%3C/g%3E%3C/svg%3E\")"
+
+function FooterEdge() {
+  return (
+    <div aria-hidden="true" className="relative z-10">
+      <div className="h-12 bg-[#01261d] md:h-14" style={{ backgroundImage: BAND_BG, backgroundSize: '72px 56px', backgroundPosition: 'center' }} />
+      <div className="h-[3px] bg-gold" />
+      <span className="absolute left-1/2 top-[calc(100%-1.5px)] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rotate-45 border-2 border-gold bg-forest" />
+    </div>
+  )
+}
 
 // Ikon TikTok (lucide tidak menyediakannya).
 function TikTokIcon({ size = 20 }: { size?: number }) {
@@ -18,17 +31,15 @@ function TikTokIcon({ size = 20 }: { size?: number }) {
 export default function Footer() {
   return (
     <>
-    <Divider />
-    <footer className="relative isolate overflow-hidden px-4 pb-36 pt-16 md:py-24">
-      {/* Latar motif hijau; sisi atasnya memudar halus agar menyatu dengan bagian di atasnya. */}
+    <FooterEdge />
+    <footer className="relative isolate overflow-hidden px-4 pb-36 pt-20 md:py-24">
+      {/* Latar motif hijau (resolusi tinggi, tajam); batas atas tegas, tanpa efek pudar. */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-20"
-        style={{ maskImage: 'linear-gradient(to bottom, transparent 0, #000 140px)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 140px)' }}
-      >
-        <img src={ASSETS.footerBg} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-forest/45" />
-      </div>
+        style={{ backgroundImage: `url(${ASSETS.footerBg})`, backgroundSize: '1600px auto', backgroundPosition: 'center top', backgroundRepeat: 'repeat-y' }}
+      />
+      <div className="absolute inset-0 -z-10 bg-forest/20" />
 
       <DecorLayer items={DECOR.footer} />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
