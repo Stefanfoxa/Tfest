@@ -19,15 +19,16 @@ export default function Footer() {
   return (
     <>
     <Divider />
-    <footer className="relative isolate overflow-hidden px-4 py-16 md:py-20">
-      <img
-        src={ASSETS.footerBg}
-        alt=""
+    <footer className="relative isolate overflow-hidden px-4 pb-36 pt-16 md:py-24">
+      {/* Latar motif hijau; sisi atasnya memudar halus agar menyatu dengan bagian di atasnya. */}
+      <div
         aria-hidden="true"
-        loading="lazy"
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 -z-10 bg-forest/90" />
+        className="absolute inset-0 -z-20"
+        style={{ maskImage: 'linear-gradient(to bottom, transparent 0, #000 140px)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 140px)' }}
+      >
+        <img src={ASSETS.footerBg} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-forest/45" />
+      </div>
 
       <DecorLayer items={DECOR.footer} />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center">
