@@ -75,7 +75,7 @@ export const COMPETITIONS: Competition[] = [
     registerUrl:
       'https://staner.id/FormulirPendaftaranPFEC2026',
     guidebookUrl: 'https://staner.id/HandbookPFEC2026',
-    twibbonUrl: 'https://drive.google.com/file/d/1D_yqmez2UR20Sli3MxarGIHi3OmRFlgj/view?usp=drive_link',
+    twibbonUrl: 'https://staner.id/TwibbonTFest2026',
   },
   {
     slug: 'pfc3',
@@ -102,7 +102,7 @@ export const COMPETITIONS: Competition[] = [
     whatsapp: '6281262612959',
     registerUrl: 'https://staner.id/FormulirPendaftaranPFC32026',
     guidebookUrl: 'https://staner.id/HandbookPFC32026',
-    twibbonUrl: 'https://drive.google.com/file/d/1D_yqmez2UR20Sli3MxarGIHi3OmRFlgj/view?usp=drive_link',
+    twibbonUrl: 'https://staner.id/TwibbonTFest2026',
   },
   {
     slug: 'pfpbc',
@@ -138,7 +138,7 @@ export const COMPETITIONS: Competition[] = [
     whatsapp: '6281276789501',
     registerUrl: 'https://staner.id/FormulirPendaftaranPFPBC2026',
     guidebookUrl: 'https://staner.id/HandbookPFPBC2026',
-    twibbonUrl: 'https://drive.google.com/file/d/1D_yqmez2UR20Sli3MxarGIHi3OmRFlgj/view?usp=drive_link',
+    twibbonUrl: 'https://staner.id/TwibbonTFest2026',
   },
   {
     slug: 'pfic',
@@ -170,6 +170,6 @@ export const COMPETITIONS: Competition[] = [
     whatsapp: '6282172793087',
     registerUrl: 'https://staner.id/FormulirPendaftaranPFIC2026',
     guidebookUrl: 'https://staner.id/HandbookPFIC2026',
-    twibbonUrl: 'https://drive.google.com/file/d/1D_yqmez2UR20Sli3MxarGIHi3OmRFlgj/view?usp=drive_link',
+    twibbonUrl: 'https://staner.id/TwibbonTFest2026',
   },
 ]
