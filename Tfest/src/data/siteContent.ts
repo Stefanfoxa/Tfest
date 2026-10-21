@@ -20,5 +20,5 @@ export const SOCIAL = {
   tiktok: 'https://www.tiktok.com/@tfest_pknstan?_r=1&_t=ZS-9AgT5avXu5e',
   tiktokHandle: '@tfest_pknstan',
   /** ISI alamat email panitia di sini, contoh: 'halo@contoh.com'. */
-  email: '',
+  email: 'Tr3@suryfest',
 } as const
