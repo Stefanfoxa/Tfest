@@ -80,7 +80,7 @@ export const COMPETITIONS: Competition[] = [
   {
     slug: 'pfc3',
     code: 'PFC3',
-    name: 'Plantation Fund Creative Content Challenge',
+    name: 'PlantationFund Creative Content Challenge',
     color: 'arc',
     theme: 'Kontribusi Dana Perkebunan dalam Mendorong Ketahanan Fiskal di Indonesia',
     subthemes: ['Dari Penyaluran ke Dampak: Menghidupkan Nilai Dana Perkebunan untuk Fiskal Tangguh'],
@@ -107,7 +107,7 @@ export const COMPETITIONS: Competition[] = [
   {
     slug: 'pfpbc',
     code: 'PFPBC',
-    name: 'Plantation Fund Policy Brief Competition',
+    name: 'PlantationFund Policy Brief Competition',
     color: 'avoc',
     theme: 'Kontribusi Dana Perkebunan dalam Mendorong Ketahanan Fiskal di Indonesia',
     subthemes: [
