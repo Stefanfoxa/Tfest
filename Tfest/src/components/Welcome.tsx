@@ -10,12 +10,12 @@ export default function Welcome() {
       <DecorLayer items={DECOR.welcome} />
       <div className="relative z-10 grid items-center gap-8 rounded-[28px] border border-soil/15 bg-cream p-6 md:grid-cols-2 md:gap-12 md:p-12">
         <img
-          src={ASSETS.maskot}
-          alt={`Maskot ${EVENT.fullName}`}
+          src={ASSETS.logoFull}
+          alt={`Logo ${EVENT.fullName}`}
           width={520}
-          height={520}
+          height={654}
           loading="lazy"
-          className="mx-auto h-auto w-full max-w-sm md:max-w-md"
+          className="mx-auto h-auto w-full max-w-[15rem] md:max-w-sm"
         />
         <div>
           <h2 className="text-4xl leading-[1.2] text-forest md:text-6xl"><span className="text-[1.16em]">Welcome to {EVENT.nameMain}</span> {EVENT.year}
