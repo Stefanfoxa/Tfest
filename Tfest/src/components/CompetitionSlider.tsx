@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { COMPETITIONS, type ColorKey, type Competition } from '../data/competitions'
 import { COLOR_STYLES } from '../lib/colorStyles'
 
@@ -46,7 +46,7 @@ const arrowBtn =
 
 // Tombol tautan. Jika URL di data/competitions.ts masih kosong, tombol tampil redup dan tidak bisa diklik.
 function ActionLink({ href, className, children }: { href: string; className: string; children: React.ReactNode }) {
-  const base = 'inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full px-9 sm:w-auto text-base font-semibold transition duration-200'
+  const base = 'inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full px-7 sm:w-auto text-base font-semibold transition duration-200'
   if (!href) {
     return (
       <span role="link" aria-disabled="true" title="Tautan segera tersedia" className={`${base} cursor-not-allowed opacity-50 ${className}`}>
@@ -141,18 +141,14 @@ export default function CompetitionSlider() {
             </div>
           )}
 
-          <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+          <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row">
             <ActionLink
               href={c.guidebookUrl}
               className="border border-cream/50 text-cream hover:bg-cream hover:text-forest"
             >
               Handbook
             </ActionLink>
-            <ActionLink
-              href={c.twibbonUrl}
-              className="border border-gold text-gold hover:bg-gold hover:text-forest"
-            >
-              <ImageIcon size={20} aria-hidden="true" />
+            <ActionLink href={c.twibbonUrl} className="border border-gold/70 text-gold hover:bg-gold hover:text-forest">
               Twibbon
             </ActionLink>
             <ActionLink href={c.registerUrl} className={`border ${COLOR_STYLES[c.color].pillActive}`}>
