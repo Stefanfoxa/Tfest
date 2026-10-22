@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { COMPETITIONS } from '../../data/competitions'
 import { DecorLayer } from '../Decor'
+import CornerFrame from '../CornerFrame'
 import { DECOR } from '../../decorConfig'
 import { EVENT } from '../../data/siteContent'
 import { COLOR_STYLES } from '../../lib/colorStyles'
@@ -83,8 +84,9 @@ export default function Timeline() {
           <div className="relative mx-auto max-w-5xl">
             <DecorLayer items={DECOR.timelineCard} />
             <div className="glass relative z-10 rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
+            <CornerFrame />
             <Ornament />
-            <h2 className="text-4xl leading-tight text-cream md:text-6xl">
+            <h2 className="title-glow text-4xl leading-tight text-cream md:text-6xl">
               <span className="text-[1.16em]">Explore Timeline of {EVENT.nameMain}</span> <span className="text-gold">{EVENT.year}</span>
             </h2>
             <div className="mt-10">
@@ -152,8 +154,9 @@ export default function Timeline() {
           <div className="relative mx-auto max-w-5xl">
             <DecorLayer items={DECOR.timelineCard} />
             <div className="glass relative z-10 rounded-[28px] px-5 py-12 text-center sm:px-8 md:px-16 md:py-20">
+            <CornerFrame />
             <Ornament />
-            <h2 className="text-4xl leading-tight text-cream md:text-6xl">
+            <h2 className="title-glow text-4xl leading-tight text-cream md:text-6xl">
               <span className="text-[1.16em]">{titleParts.main}</span> <span className="text-gold">{titleParts.last}</span>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/90 md:text-lg">
