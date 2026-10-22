@@ -143,13 +143,19 @@ export default function CompetitionSlider() {
             </div>
           )}
 
-          <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row">
+          <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
             <ActionLink
               href={c.guidebookUrl}
               className="border border-cream/50 text-cream hover:bg-cream hover:text-forest"
             >
               Handbook
             </ActionLink>
+            {/* Tombol Poster hanya muncul di lomba yang punya field posterUrl (PFC3). */}
+            {c.posterUrl !== undefined && (
+              <ActionLink href={c.posterUrl} className={`border ${ACCENT[c.color]} hover:bg-cream/10`}>
+                Poster
+              </ActionLink>
+            )}
             <ActionLink href={c.twibbonUrl} className="border border-gold/70 text-gold hover:bg-gold hover:text-forest">
               Twibbon
             </ActionLink>
