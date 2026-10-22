@@ -91,3 +91,12 @@
 @media (prefers-reduced-motion: reduce) {
   .decor-sway, .decor-sway-m, .decor-twinkle { animation: none !important; }
 }
+
+/* Judul bercahaya: ekstrusi emas di bawah huruf + glow lembut. Bagian beraksen emas (span text-*) memakai versi sendiri. */
+.title-glow {
+  text-shadow: 0 2px 0 #f19a20, 0 4px 0 #b86d0a, 0 0 18px rgba(241, 154, 32, 0.55), 0 0 44px rgba(241, 154, 32, 0.28),
+    0 8px 16px rgba(0, 0, 0, 0.45);
+}
+.title-glow span[class*='text-'] {
+  text-shadow: 0 2px 0 #8a5008, 0 4px 0 #572f08, 0 0 20px rgba(241, 154, 32, 0.5), 0 8px 16px rgba(0, 0, 0, 0.4);
+}
