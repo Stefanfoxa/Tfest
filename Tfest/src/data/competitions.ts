@@ -40,6 +40,8 @@ export interface Competition {
   guidebookUrl: string
   /** Link twibbon. Kosong sampai linknya tersedia. */
   twibbonUrl: string
+  /** Link poster. Hanya dipakai lomba yang punya tombol Poster (saat ini PFC3). Kosong sampai linknya tersedia. */
+  posterUrl?: string
 }
 
 export const COMPETITIONS: Competition[] = [
@@ -103,6 +105,7 @@ export const COMPETITIONS: Competition[] = [
     registerUrl: 'https://staner.id/FormulirPendaftaranPFC32026',
     guidebookUrl: 'https://staner.id/HandbookPFC32026',
     twibbonUrl: 'https://staner.id/TwibbonTFest2026',
+    posterUrl: '',
   },
   {
     slug: 'pfpbc',
