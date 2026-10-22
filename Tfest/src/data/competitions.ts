@@ -105,7 +105,7 @@ export const COMPETITIONS: Competition[] = [
     registerUrl: 'https://staner.id/FormulirPendaftaranPFC32026',
     guidebookUrl: 'https://staner.id/HandbookPFC32026',
     twibbonUrl: 'https://staner.id/TwibbonTFest2026',
-    posterUrl: '',
+    posterUrl: 'https://staner.id/PosterTreasuryFest2026',
   },
   {
     slug: 'pfpbc',
