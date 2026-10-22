@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { COMPETITIONS, type ColorKey, type Competition } from '../data/competitions'
 import { COLOR_STYLES } from '../lib/colorStyles'
+import CornerFrame from './CornerFrame'
 
 // Deskripsi singkat tiap lomba, diringkas dari handbook masing-masing.
 const BLURB: Record<string, string> = {
@@ -104,14 +105,15 @@ export default function CompetitionSlider() {
         touchX.current = null
       }}
     >
-      <div className="glass rounded-[32px] px-5 pb-8 pt-10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] md:px-24 md:pb-12 md:pt-14">
+      <div className="glass relative rounded-[32px] px-5 pb-8 pt-10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] md:px-24 md:pb-12 md:pt-14">
+        <CornerFrame />
         {/* key={slug}: konten dipasang ulang tiap pindah slide sehingga animasi masuk berjalan. */}
         <div key={c.slug} className="animate-slide-in flex flex-col items-center text-center" aria-live="polite">
           <span className={`rounded-full border px-6 py-2 text-sm font-semibold uppercase tracking-[0.25em] ${ACCENT[c.color]}`}>
             {c.code}
           </span>
 
-          <h2 className="mt-6 max-w-3xl text-[clamp(34px,5vw,64px)] leading-[1.2] text-cream">
+          <h2 className="title-glow mt-6 max-w-3xl text-[clamp(34px,5vw,64px)] leading-[1.2] text-cream">
             {c.name} <span className={ACCENT[c.color].split(' ')[0]}>({c.code})</span>
           </h2>
 
