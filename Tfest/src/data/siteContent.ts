@@ -8,6 +8,8 @@ export const EVENT = {
   /** Paragraf deskripsi di bagian Welcome. Hanya memuat fakta dari brief lomba. */
   welcomeText:
     'Treasury Festival 2026 menghadirkan empat lomba bertema Dana Perkebunan, terbuka bagi pelajar SMA dan sederajat, mahasiswa, serta masyarakat umum, tanpa biaya pendaftaran.',
+  /** Tombol di bagian Welcome: tautan ke folder berisi logo dan surat orisinalitas. Isi url saat linknya ada. */
+  supportFiles: { label: 'Logo & Surat Orisinalitas', url: '' as string },
   /** Teks layar penutup Timeline (dipakai di tahap Timeline). */
   closingTitle: 'See u on the next Treasury Festival 2027',
   closingThanks: 'Terima kasih banyak atas partisipasi luar biasa Anda dalam Treasury Festival 2026!',
