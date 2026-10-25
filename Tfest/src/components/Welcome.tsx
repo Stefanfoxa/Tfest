@@ -1,6 +1,8 @@
 import { FolderDown } from 'lucide-react'
 import { ASSETS } from '../lib/assets'
 import { EVENT } from '../data/siteContent'
+import { DecorLayer } from './Decor'
+import { DECOR } from '../decorConfig'
 
 // Hijau tua dengan teks krem; saat hover berubah emas dengan teks hijau tua (teks emas tidak dipakai di atas krem).
 const supportBtn =
@@ -8,18 +10,21 @@ const supportBtn =
 
 export default function Welcome() {
   return (
-    <section id="welcome" className="bg-forest px-4 py-16 md:py-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 rounded-[28px] border border-soil/15 bg-cream p-6 md:grid-cols-2 md:gap-12 md:p-12">
+    <section id="welcome" className="relative overflow-hidden px-4 py-16 md:py-24">
+      <div className="relative mx-auto max-w-6xl">
+      <DecorLayer items={DECOR.welcome} />
+      <div className="relative z-10 grid items-center gap-8 rounded-[28px] border border-soil/15 bg-cream p-6 md:grid-cols-2 md:gap-12 md:p-12">
         <img
-          src={ASSETS.maskot}
-          alt={`Maskot ${EVENT.fullName}`}
+          src={ASSETS.logoFull}
+          alt={`Logo ${EVENT.fullName}`}
           width={520}
-          height={520}
+          height={654}
           loading="lazy"
-          className="mx-auto h-auto w-full max-w-sm md:max-w-md"
+          className="mx-auto h-auto w-full max-w-[15rem] md:max-w-sm"
         />
         <div className="text-center">
-          <h2 className="text-3xl leading-tight text-forest md:text-5xl">Welcome to {EVENT.fullName}</h2>
+          <h2 className="text-4xl leading-[1.2] text-forest md:text-6xl"><span className="text-[1.16em]">Welcome to {EVENT.nameMain}</span> {EVENT.year}
+          </h2>
           <span aria-hidden="true" className="mx-auto my-6 block h-1 w-40 rounded-full bg-gold md:w-64" />
           {/* Paragraf deskripsi kosong sampai teksnya diberikan (lihat data/siteContent.ts). */}
           {EVENT.welcomeText && (
@@ -51,6 +56,7 @@ export default function Welcome() {
             )}
           </div>
         </div>
+      </div>
       </div>
     </section>
   )
