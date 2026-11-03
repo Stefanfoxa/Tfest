@@ -62,7 +62,7 @@ export const COMPETITIONS: Competition[] = [
     fee: 'Gratis',
     benefits: ['Juara 1, 2, 3: Uang Pembinaan + Certificate', 'E-Certificate untuk seluruh peserta'],
     timeline: [
-      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-02', type: 'Registrasi', short: 'Daftar', description: '' },
+      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-05', type: 'Registrasi', short: 'Daftar', description: '' },
       { label: 'Batas Pengumpulan Karya', start: '2026-11-04', type: 'Pengumpulan', short: 'Batas Karya', description: '' },
       { label: 'Pengumuman 6 Finalis', start: '2026-11-18', type: 'Pengumuman', short: '6 Finalis', description: '' },
       { label: 'Batas Pengumpulan Media Presentasi', start: '2026-11-23', type: 'Pengumpulan', short: 'Batas Media', description: '' },
@@ -128,7 +128,7 @@ export const COMPETITIONS: Competition[] = [
       'E-Certificate untuk seluruh peserta',
     ],
     timeline: [
-      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-02', type: 'Registrasi', short: 'Daftar', description: '' },
+      { label: 'Pendaftaran', start: '2026-10-19', end: '2026-11-04', type: 'Registrasi', short: 'Daftar', description: '' },
       { label: 'Batas Pengumpulan Abstrak', start: '2026-11-02', type: 'Pengumpulan', short: 'Abstrak', description: '' },
       { label: 'Pengumuman Semifinalis', start: '2026-11-08', type: 'Pengumuman', short: 'Semifinalis', description: '' },
       { label: 'Batas Akhir Pengumpulan Full Paper', start: '2026-11-18', type: 'Pengumpulan', short: 'Full Paper', description: '' },
